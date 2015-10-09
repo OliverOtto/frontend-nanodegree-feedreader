@@ -4,21 +4,21 @@ This Html Application is used to use the jasmine framework for testing the funct
 
 Several Tests are conducted:
 
-RSS Feeds
-	are defined
-	URLs are defined
-	names are defined
+---------
 
-The menu
-	is hidden by default
-	is displayed when clicked
-	is hidden when clicked again
+RSS Feeds are defined
+RSS Feeds URLs are defined
+RSS Feeds names are defined
 
-Initial Entries
-	are present - at least as single .entry element in the feed container
+The menu is hidden by default
+The menu is displayed when clicked
+The menu is hidden when clicked again
 
-New Feed Selection
-	actually changes content
+Initial Entries are present - at least as single .entry element in the feed container
+
+New Feed Selection actually changes content
+
+---------
 
 To test the functionality use index.html or the github url http://oliverotto.github.io/frontend-nanodegree-feedreader
 
