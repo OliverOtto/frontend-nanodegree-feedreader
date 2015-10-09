@@ -5,19 +5,19 @@ This Html Application is used to use the jasmine framework for testing the funct
 
 ---------
 
-* **Several Tests are conducted:**
+##Several Tests are conducted:**
 
-*RSS Feeds are defined
-*RSS Feeds URLs are defined
-*RSS Feeds names are defined
+* **RSS Feeds are defined**
+* **RSS Feeds URLs are defined**
+* **RSS Feeds names are defined**
 
-*The menu is hidden by default
-*The menu is displayed when clicked
-*The menu is hidden when clicked again
+* **The menu is hidden by default**
+* **The menu is displayed when clicked**
+* **The menu is hidden when clicked again**
 
-*Initial Entries are present - at least as single .entry element in the feed container
+* **Initial Entries are present - at least as single .entry element in the feed container**
 
-*New Feed Selection actually changes content
+* **New Feed Selection actually changes content**
 
 ---------
 
