@@ -5,7 +5,7 @@ This Html Application is used to use the jasmine framework for testing the funct
 
 ---------
 
-##Several Tests are conducted:**
+##Several Tests are conducted:
 
 * **RSS Feeds are defined**
 * **RSS Feeds URLs are defined**
