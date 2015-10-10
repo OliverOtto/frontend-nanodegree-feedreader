@@ -1,11 +1,11 @@
-#Udacity Nanodegree Front End Developer Project 6
+# Udacity Nanodegree Front End Developer Project 6
 
 This Html Application is used to use the jasmine framework for testing the functionality.
 
 
 ---------
 
-##Several Tests are conducted:
+## Several Tests are conducted:
 
 * **RSS Feeds are defined**
 * **RSS Feeds URLs are defined**

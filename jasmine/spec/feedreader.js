@@ -32,12 +32,12 @@ $(function() {
          * and that the URL is not empty.
          */
         it('URLs are defined', function() {
-            for (var i = 0; i < allFeeds.length; i++) {
-                //defined
-                expect(allFeeds[i].url).toBeDefined();
-                //not empty
-                expect(allFeeds[i].url.length).not.toBe(0);
-            }
+            allFeeds.forEach( function(feed) {
+                //url is defined
+                expect(feed.url).toBeDefined();
+                //url is not empty
+                expect(feed.url.length).not.toBe(0);
+            });
         });
 
 
@@ -46,12 +46,12 @@ $(function() {
          * and that the name is not empty.
          */
         it('names are defined', function() {
-            for (var i = 0; i < allFeeds.length; i++) {
-                //defined
-                expect(allFeeds[i].name).toBeDefined();
-                //not empty
-                expect(allFeeds[i].name.length).not.toBe(0);
-            }
+            allFeeds.forEach( function(feed) {
+                //name of feed is defined
+                expect(feed.name).toBeDefined();
+                //name of feed is not empty
+                expect(feed.name.length).not.toBe(0);
+            });
         });
     });
 
@@ -95,18 +95,14 @@ $(function() {
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test wil require
          * the use of Jasmine's beforeEach and asynchronous done() function.
-         *
-         *Asynchronous handling provided - done()
          */
-         //Asynchronous setup
-         beforeEach(function(done) {
-            loadFeed(0, done);
+        beforeEach(function() {
+            loadFeed(0);
         });
         //check - after load at least one feed present
-        it('are present - at least as single .entry element in the feed container', function(done) {
-            var feeds = $('.feed').children().length;
-            expect(feeds).toBeGreaterThan(0);
-            done();
+        it('are present - at least a single .entry element in the feed container', function(done) {
+            var entriesLength = $('.feed').children().length;
+            expect(entriesLength).toBeGreaterThan(0);
         });
     });
 
@@ -121,21 +117,24 @@ $(function() {
          //test setUp for asynchronous handling watch done()
         var oldFeedTitle;
         beforeEach(function(done) {
-            oldFeedTitle = $('h2').text();
-            loadFeed(1, done);
+            $('h2').empty();
+            loadFeed(0, function (){
+                oldFeedTitle = $('h2').text();
+                loadFeed(1, done);
+            });
         });
         it('actually changes content', function(done) {
             var newFeedTitle = $('h2').text();
-            //check defined
+            //check feed title is defined
             expect(newFeedTitle).toBeDefined();
-            //not empty
+            //feed title is not empty
             expect(newFeedTitle.length).toBeGreaterThan(0);
-            // not the same as old title
+            // feed title is not the same as old title
             expect(newFeedTitle).not.toBe(oldFeedTitle);
             done();
         });
         afterEach(function(done) {
             loadFeed(0, done);
-        });;
+        });
     });
 }());
