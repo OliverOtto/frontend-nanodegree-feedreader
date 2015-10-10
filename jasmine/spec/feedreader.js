@@ -96,13 +96,14 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test wil require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-        beforeEach(function() {
-            loadFeed(0);
+        beforeEach(function(done) {
+            loadFeed(0, done);
         });
         //check - after load at least one feed present
         it('are present - at least a single .entry element in the feed container', function(done) {
             var entriesLength = $('.feed').children().length;
             expect(entriesLength).toBeGreaterThan(0);
+            done();
         });
     });
 
